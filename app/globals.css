@@ -1,0 +1,307 @@
+:root {
+  --papier: #ffffff;
+  --tusz: #000000;
+  --szary: #5f6873;
+  --linia: #e3e6ea;
+  --akcent: #16295c;
+  --miara: 34rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--tusz);
+  font-family: "Work Sans", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: inherit; }
+
+::selection { background: var(--akcent); color: #fff; }
+
+:focus-visible { outline: 2px solid var(--akcent); outline-offset: 3px; }
+
+/* ---------- pasek górny ---------- */
+
+.pasek {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--papier);
+  border-bottom: 1px solid var(--linia);
+}
+
+.pasek-wnetrze {
+  max-width: var(--miara);
+  margin: 0 auto;
+  padding: 0.7rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.pasek-marka { display: block; line-height: 0; }
+
+.pasek-logo {
+  height: 46px;
+  width: auto;
+  max-width: none;
+}
+
+.pasek-tel {
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  color: var(--akcent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 420px) {
+  .pasek-logo { height: 38px; }
+  .pasek-tel { font-size: 0.82rem; }
+}
+
+/* ---------- układ ---------- */
+
+.sekcja {
+  padding: 5.5rem 1.25rem;
+  border-top: 1px solid var(--linia);
+}
+
+.sekcja:first-of-type { border-top: 0; }
+
+.kolumna { max-width: var(--miara); margin: 0 auto; }
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+h2 { font-size: clamp(2rem, 7vw, 2.9rem); line-height: 1.12; }
+
+h3 { font-size: 1.35rem; line-height: 1.25; }
+
+p { margin: 0 0 1.15rem; }
+
+.wstep { color: var(--szary); margin-top: 1.5rem; }
+
+/* ---------- hero ---------- */
+
+.hero { position: relative; }
+
+.hero-foto { width: 100%; object-fit: cover; height: 78vh; min-height: 420px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-foto { animation: wejscie 1.1s ease-out both; }
+}
+
+@keyframes wejscie {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: none; }
+}
+
+.hero-tekst { padding: 2.25rem 1.25rem 0; }
+
+.hero-zdanie {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.9rem, 7.5vw, 3.2rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 22ch;
+}
+
+.hero-podpis {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--szary);
+}
+
+/* ---------- o mnie ---------- */
+
+.portret { margin: 2.5rem 0; }
+
+/* ---------- portfolio ---------- */
+
+.sekcja-zdjecia { padding-left: 0; padding-right: 0; }
+
+.pod-karuzela { padding: 0 1.25rem; }
+
+.karuzela {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  padding: 0 1.25rem;
+  margin-top: 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.karuzela::-webkit-scrollbar { display: none; }
+
+.karuzela img {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  height: min(68vh, 540px);
+  object-fit: cover;
+  scroll-snap-align: center;
+}
+
+.karuzela-podpowiedz {
+  margin: 0.9rem 0 0;
+  font-size: 0.85rem;
+  color: var(--szary);
+}
+
+/* ---------- pakiety ---------- */
+
+.pakiet { padding: 2.75rem 0; border-top: 1px solid var(--linia); }
+
+.pakiet:first-of-type { border-top: 0; padding-top: 1.5rem; }
+
+.pakiet-glowa { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+.pakiet-cena { font-size: 1.5rem; font-family: "Fraunces", Georgia, serif; white-space: nowrap; }
+
+.znacznik {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: #fff;
+  background: var(--akcent);
+  border-radius: 999px;
+  padding: 0.15rem 0.7rem;
+}
+
+.lista { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+
+.lista li { padding: 0.35rem 0 0.35rem 1.1rem; position: relative; }
+
+.lista li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.95em;
+  width: 0.45rem;
+  height: 1px;
+  background: var(--tusz);
+}
+
+.lista .stare { color: var(--szary); }
+
+.lista .stare::before { background: var(--szary); }
+
+.pakiet-opis { margin-top: 1.5rem; color: var(--szary); }
+
+.zadatek { margin-top: 2.5rem; font-size: 0.95rem; color: var(--szary); }
+
+/* ---------- pozycje cenowe ---------- */
+
+.pozycja { padding: 1.6rem 0; border-top: 1px solid var(--linia); }
+
+.pozycja:last-child { border-bottom: 1px solid var(--linia); }
+
+.pozycja-glowa { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+
+.pozycja-cena { white-space: nowrap; color: var(--akcent); }
+
+.pozycja p { margin: 0.5rem 0 0; color: var(--szary); }
+
+/* ---------- opinie ---------- */
+
+.opinia { margin: 0 0 3rem; }
+
+.opinia p {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.3rem;
+  line-height: 1.45;
+}
+
+.opinia footer { color: var(--szary); font-size: 0.95rem; }
+
+/* ---------- kontakt ---------- */
+
+.kontakt-link {
+  display: block;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.6rem, 6vw, 2.3rem);
+  text-decoration: none;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--linia);
+  word-break: break-word;
+}
+
+.kontakt-link:last-of-type { border-bottom: 1px solid var(--linia); }
+
+.stopka {
+  padding: 3rem 1.25rem 4rem;
+  color: var(--szary);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------- podpis odręczny ---------- */
+
+.podpis {
+  margin: 2.5rem 0 0;
+  width: 210px;
+  height: auto;
+}
+
+.stopka .podpis { margin: 0 auto 1.25rem; }
+
+/* ---------- odsyłacz do kontaktu ---------- */
+
+.cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.95rem;
+  color: var(--akcent);
+  text-decoration: none;
+  border: 1px solid var(--akcent);
+  border-radius: 999px;
+}
+
+.cta-mocne {
+  margin-top: 2rem;
+  color: #fff;
+  background: var(--akcent);
+}
+
+.baza {
+  margin: 1.4rem 0 0;
+  font-size: 0.95rem;
+  color: var(--akcent);
+}
+
+.lista + .pakiet-opis { margin-top: 1.5rem; }
+
+/* ---------- proces ---------- */
+
+.proces { margin: 2.5rem 0 0; }
+
+.proces > div { padding: 1.4rem 0; border-top: 1px solid var(--linia); }
+
+.proces > div:last-child { border-bottom: 1px solid var(--linia); }
+
+.proces dt {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.15rem;
+}
+
+.proces dd { margin: 0.45rem 0 0; color: var(--szary); }
