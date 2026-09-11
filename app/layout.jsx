@@ -1,4 +1,5 @@
 import { marka } from "../content";
+import PlywajacyKontakt from "../components/PlywajacyKontakt";
 import "./globals.css";
 
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pl">
+    <html lang="pl" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -18,7 +19,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <PlywajacyKontakt />
+      </body>
     </html>
   );
 }

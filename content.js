@@ -1,12 +1,14 @@
 // Cała treść strony jest tutaj. Zmieniasz tekst albo cenę w tym pliku i to wszystko.
-// Zdjęcia podmieniasz w folderze public/foto, zachowując nazwy plików.
+// Zdjęcia do karuzeli portfolio dodajesz przez galleryIndex.js:
+// 1. konwertujesz je do public/foto/klienci/<wesele>/ (patrz scripts/convert_to_webp.py)
+// 2. wybierasz, które pokazać, w public/foto/klienci/<wesele>/index.json
+// 3. dopisujesz nazwę folderu <wesele> do galleryFolders w galleryIndex.js
 
 export const marka = {
   nazwa: "Michał",
   nazwisko: "Mlenko",
-  telefon: "+48 600 000 000",
-  telefonLink: "+48600000000",
-  email: "kontakt@mlenko.pl",
+  telefon: "+48000000000",
+  email: "michal.mlenko.pl",
   logo: "/foto/logo.png",
   // Zostaw pusty ciąg znaków, jeśli nie chcesz przycisku do Messengera.
   messenger: "https://m.me/twojprofil",
@@ -14,21 +16,12 @@ export const marka = {
 };
 
 export const hero = {
-  zdjecie: "/foto/hero.jpg",
-  zdanie: "Robię zdjęcia tak, żebyście na własnym weselu czuli się swobodnie.",
-  podpis: "Oferta na sezon " + marka.rok,
+  zdjecie: "/foto/hero.webp",
+  zdanie: "„Kochać to znaczy patrzeć w tym samym kierunku.” — C.S. Lewis",
+  podpis:
+    "Świętujcie ten dzień z najważniejszymi ludźmi wokół. Dobrze się bawcie, a ja zajmę się resztą i uwiecznię te wyjątkowe chwile!",
 };
 
-export const portfolio = [
-  "/foto/01.jpg",
-  "/foto/02.jpg",
-  "/foto/03.jpg",
-  "/foto/04.jpg",
-  "/foto/05.jpg",
-  "/foto/06.jpg",
-  "/foto/07.jpg",
-  "/foto/08.jpg",
-];
 
 // Link do pełnej galerii z jednego wesela. Zostaw pusty adres, jeśli jeszcze go nie masz.
 export const pelnyReportaz = {
@@ -37,12 +30,12 @@ export const pelnyReportaz = {
 };
 
 export const oMnie = {
-  zdjecie: "/foto/portret.jpg",
+  zdjecie: "/foto/portret.png",
   podpis: "/foto/podpis.png",
   akapity: [
-    "Cześć, jestem Michał. Fotografuję wesela od sześciu lat i wciąż nie umiem stać z boku — najlepsze kadry robią się wtedy, kiedy jestem blisko i nikt już nie pamięta, że mam aparat.",
+    "Cześć, jestem Michał. Fotografuję wesela od pięciu lat i wciąż nie umiem stać z boku — najlepsze kadry robią się wtedy, kiedy jestem blisko i nikt już nie pamięta, że mam aparat.",
     "Nie ustawiam ludzi w rzędach i nie każę patrzeć w obiektyw przez pół godziny. Podpowiadam, co zrobić z rękami, resztę zostawiam Wam. Wychodzi z tego reportaż, a nie sesja przebierana za wesele.",
-    "Pracuję w okolicach [Twoje miasto], ale na dobre wesele przyjadę wszędzie.",
+    "Pracuję w okolicach Białegostoku, ale na dobre wesele przyjadę wszędzie.",
   ],
 };
 
@@ -121,7 +114,7 @@ export const dodatki = [
   { nazwa: "Dodatkowa godzina", cena: "250 zł", opis: "Kiedy zabawa nie chce się skończyć albo przygotowania zaczynają się wcześniej." },
   { nazwa: "Odbitki", cena: "3 zł za sztukę", opis: "Papier matowy, format 15×21. Możecie dobrać do pudełka albo zamówić osobno." },
   { nazwa: "Drewniane pudełko z odbitkami", cena: "350 zł", opis: "Sto zdjęć w pudełku. Najlepszy prezent dla rodziców, sprawdzone wielokrotnie." },
-  { nazwa: "Dojazd", cena: "w cenie", opis: "Do 150 km od [Twoje miasto]. Dalej dogadamy się indywidualnie." },
+  { nazwa: "Dojazd", cena: "w cenie", opis: "Do 150 km od Białegostoku. Dalej dogadamy się indywidualnie." },
 ];
 
 export const proces = [
