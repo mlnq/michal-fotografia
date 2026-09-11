@@ -7,8 +7,8 @@
 export const marka = {
   nazwa: "Michał",
   nazwisko: "Mlenko",
-  telefon: "+48000000000",
-  email: "michal.mlenko.pl",
+  telefon: "+48784284560",
+  email: "michal.mlenko@gmail.com",
   logo: "/foto/logo.png",
   // Zostaw pusty ciąg znaków, jeśli nie chcesz przycisku do Messengera.
   messenger: "https://m.me/twojprofil",
@@ -41,19 +41,12 @@ export const oMnie = {
 
 export const opinie = [
   {
-    tekst: "Baliśmy się, że będziemy sztywni na zdjęciach, bo żadne z nas nie lubi się fotografować. Michał załatwił to w dziesięć minut i potem już go nie zauważaliśmy. Zdjęcia dostaliśmy szybciej, niż obiecywał.",
-    autor: "Ania i Paweł",
-    kontekst: "wesele w [nazwa sali], sierpień 2025",
+    tekst: "Piękne zdjęcia, do tego nastrojowa muzyka, było czuć ten klimat i emocje, aż się łezka w oku zakręciła! Zrobiłeś kawał dobrej roboty!",
+    autor: "Kuba i Asia",
   },
   {
-    tekst: "Goście do dziś pytają, kto robił nam zdjęcia. Najbardziej lubimy te, o których nie wiedzieliśmy, że powstają.",
-    autor: "Kasia i Marcin",
-    kontekst: "wesele w [nazwa sali], czerwiec 2025",
-  },
-  {
-    tekst: "Ślub mieliśmy w ciemnym kościele i baliśmy się o zdjęcia. Wyszły lepiej niż te z pleneru. Michał ogarnął też rodzinę przy zdjęciach grupowych, co samo w sobie zasługuje na medal.",
-    autor: "Ola i Bartek",
-    kontekst: "wesele w [nazwa sali], wrzesień 2025",
+    tekst: "Michał, zdjęcia są cudowne, jestem w szoku, że te wszystkie emocje były uchwycone na tych zdjęciach. Wracam do nich. Naprawdę, w takim stylu i vibe jaki chciałam.",
+    autor: "Aniela i Mateusz",
   },
 ];
 

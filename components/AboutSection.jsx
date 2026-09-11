@@ -9,8 +9,8 @@ export default function AboutSection({ oMnie, marka }) {
           className="portret"
           src={oMnie.zdjecie}
           alt={`${marka.nazwa} ${marka.nazwisko}, fotograf ślubny`}
-          width={1200}
-          height={1500}
+          width={1457}
+          height={1458}
         />
         {oMnie.akapity.map((a) => (
           <p key={a.slice(0, 24)}>{a}</p>

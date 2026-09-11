@@ -170,6 +170,16 @@ p { margin: 0 0 1.15rem; }
 }
 
 @media (max-width: 680px) {
+  .karuzela { gap: 0; }
+
+  .karuzela img {
+    box-shadow: -6px 0 10px rgba(0, 0, 0, 0.12);
+  }
+
+  .karuzela img:not(:first-child) {
+    margin-left: -18px;
+  }
+
   .karuzela img.poziome {
     width: min(52vh, 400px);
     object-fit: contain;
