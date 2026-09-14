@@ -164,6 +164,37 @@ p { margin: 0 0 1.15rem; }
 
 .karuzela::-webkit-scrollbar { display: none; }
 
+.karuzela-owijka { position: relative; }
+
+.karuzela-strzalka {
+  display: none;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--linia);
+  border-radius: 50%;
+  background: var(--papier);
+  color: var(--tusz);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.karuzela-strzalka:hover { background: var(--akcent); color: #fff; }
+
+.karuzela-strzalka-lewo { left: 1.25rem; }
+.karuzela-strzalka-prawo { right: 1.25rem; }
+
+@media (pointer: fine) and (min-width: 681px) {
+  .karuzela-strzalka { display: flex; }
+}
+
 .karuzela img {
   flex: 0 0 auto;
   width: auto;
