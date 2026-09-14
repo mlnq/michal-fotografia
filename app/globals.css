@@ -108,12 +108,10 @@ p { margin: 0 0 1.15rem; }
 
 .hero { position: relative; }
 
-.hero-foto {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 85vh;
-  object-fit: contain;
+.hero-foto { width: 100%; object-fit: cover; height: 78vh; min-height: 420px; }
+
+@media (max-width: 680px) {
+  .hero-foto { height: auto; min-height: 0; max-height: 85vh; object-fit: contain; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
