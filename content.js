@@ -34,7 +34,7 @@ export const oMnie = {
   podpis: "/foto/podpis.png",
   akapity: [
     "Cześć, jestem Michał. Fotografuję wesela od pięciu lat i wciąż nie umiem stać z boku — najlepsze kadry robią się wtedy, kiedy jestem blisko i nikt już nie pamięta, że mam aparat.",
-    "Nie ustawiam ludzi w rzędach i nie każę patrzeć w obiektyw przez pół godziny. Podpowiadam, co zrobić z rękami, resztę zostawiam Wam. Wychodzi z tego reportaż, a nie sesja przebierana za wesele.",
+    "Zamiast reżyserowanych scen, daję Wam przestrzeń do bycia sobą. Jeśli trzeba — delikatnie podpowiem i pokieruję, ale przede wszystkim pozwalam wydarzeniom płynąć własnym rytmem. Efekt to szczery reportaż pełen autentycznych emocji.",
     "Pracuję w okolicach Białegostoku, ale na dobre wesele przyjadę wszędzie.",
   ],
 };
