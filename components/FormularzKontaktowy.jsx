@@ -42,7 +42,11 @@ export default function FormularzKontaktowy({ tresc }) {
   };
 
   if (status === "sukces") {
-    return <p className="formularz-status formularz-sukces">{tresc.sukces}</p>;
+    return (
+      <p className="formularz-status formularz-sukces" role="status">
+        {tresc.sukces}
+      </p>
+    );
   }
 
   return (
@@ -131,7 +135,7 @@ export default function FormularzKontaktowy({ tresc }) {
       </button>
 
       {status === "blad" && (
-        <p className="formularz-status formularz-blad">{tresc.blad}</p>
+        <p className="formularz-status formularz-blad" role="status">{tresc.blad}</p>
       )}
     </form>
   );

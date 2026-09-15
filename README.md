@@ -29,6 +29,24 @@ Strona otworzy się pod http://localhost:3000
 
 Od tej pory każdy zapisany plik wysłany na GitHuba aktualizuje stronę automatycznie.
 
+## Formularz kontaktowy — dane do skrzynki e-mail
+
+Formularz na stronie wysyła wiadomości przez e-mail, więc żeby działał, Vercel musi znać dane logowania do skrzynki SMTP. Bez tego formularz będzie pokazywał błąd przy każdej próbie wysyłki.
+
+Potrzebne zmienne (te same, co w pliku `.env.example`):
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE`
+- `SMTP_USER`
+- `SMTP_PASS`
+
+Gdzie je wpisać w Vercelu: wejdź w projekt → Settings → Environment Variables, dodaj każdą zmienną z jej wartością i zapisz. Po dodaniu lub zmianie zmiennych trzeba zrobić ponowny deploy (zakładka Deployments → wybierz najnowszy → „Redeploy”), inaczej strona dalej będzie działać na starych ustawieniach.
+
+Adres, na który trafiają zapytania z formularza, to `marka.email` w `content.js` — nie ustawia się go w zmiennych środowiskowych.
+
+Do testów na komputerze skopiuj plik `.env.example` do `.env.local` i uzupełnij te same wartości.
+
 ## Zanim pokażesz stronę klientom
 
 - Wpisz prawdziwy numer telefonu i e-mail w `content.js` (pola `telefon`, `telefonLink`, `email`).

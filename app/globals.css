@@ -409,7 +409,7 @@ p { margin: 0 0 1.15rem; }
   word-break: break-word;
 }
 
-.kontakt-link:last-of-type { border-bottom: 1px solid var(--linia); }
+.kontakt-link + .kontakt-link { border-bottom: 1px solid var(--linia); }
 
 .stopka {
   padding: 3rem 1.25rem 4rem;
@@ -449,8 +449,11 @@ p { margin: 0 0 1.15rem; }
 
 button.cta {
   font: inherit;
-  background: none;
   cursor: pointer;
+}
+
+button.cta:not(.cta-mocne) {
+  background: none;
 }
 
 .cta-tekstowe {
@@ -557,6 +560,10 @@ button.cta {
   justify-self: start;
   border: 0;
   cursor: pointer;
+}
+
+.formularz-kontaktowy button.cta-mocne {
+  background: var(--akcent);
 }
 
 .formularz-kontaktowy button:disabled {

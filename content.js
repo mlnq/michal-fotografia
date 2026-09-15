@@ -164,6 +164,7 @@ export const proces = [
 export const kontakt = {
   naglowek: "Sprawdźmy, czy mam wolny termin",
   tekst: "Napiszcie datę i miejsce wesela, odpowiem tego samego dnia. Jeśli wolicie porozmawiać, dzwońcie śmiało.",
+  zapasowyTekst: "Wolisz zadzwonić albo napisać bezpośrednio?",
   formularz: {
     pola: {
       imieNazwisko: { etykieta: "Imię i nazwisko", placeholder: "Ania i Paweł" },
