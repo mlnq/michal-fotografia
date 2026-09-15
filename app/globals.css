@@ -512,3 +512,83 @@ button.cta {
 }
 
 .proces dd { margin: 0.45rem 0 0; color: var(--szary); }
+
+/* ---------- formularz kontaktowy ---------- */
+
+.formularz-kontaktowy {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 32rem;
+  margin-top: 2.5rem;
+}
+
+.formularz-kontaktowy .pole {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.formularz-kontaktowy label {
+  font-size: 0.85rem;
+  color: var(--szary);
+}
+
+.formularz-kontaktowy input,
+.formularz-kontaktowy textarea {
+  font: inherit;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--linia);
+  border-radius: 4px;
+  background: var(--papier);
+  color: var(--tusz);
+}
+
+.formularz-kontaktowy input:focus-visible,
+.formularz-kontaktowy textarea:focus-visible {
+  outline: 2px solid var(--akcent);
+  outline-offset: 1px;
+}
+
+.formularz-kontaktowy textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.formularz-kontaktowy button {
+  justify-self: start;
+  border: 0;
+  cursor: pointer;
+}
+
+.formularz-kontaktowy button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pole-ukryte {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.formularz-status {
+  margin-top: 1rem;
+}
+
+.formularz-sukces {
+  color: var(--akcent);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.2rem;
+}
+
+.formularz-blad {
+  color: #b3261e;
+}
+
+.kontakt-zapasowy {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--linia);
+}
