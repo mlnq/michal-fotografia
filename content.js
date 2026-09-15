@@ -29,6 +29,15 @@ export const pelnyReportaz = {
   url: "",
 };
 
+// Zakładka "Wasze historie" (/historie): pełne reportaże ślubne z podpisami.
+// Zdjęcia i podpisy dodajesz w public/foto/historie/<slug>/index.json —
+// patrz historieIndex.js. Tu ustalasz tylko, które historie mają się pokazać,
+// pod jakim tytułem i (opcjonalnie) z jakim zdjęciem okładkowym.
+export const historie = [
+  { slug: "kinga-mateusz", para: "Kinga i Mateusz" },
+  { slug: "aniela-mateusz", para: "Aniela i Mateusz" },
+];
+
 export const oMnie = {
   zdjecie: "/foto/portret.png",
   podpis: "/foto/podpis.png",

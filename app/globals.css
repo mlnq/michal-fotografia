@@ -68,6 +68,50 @@ a { color: inherit; }
   .pasek-nav { display: none; }
 }
 
+.pasek-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.pasek-hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--tusz);
+}
+
+@media (max-width: 680px) {
+  .pasek-hamburger { display: flex; }
+}
+
+.pasek-nav-mobilne {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--linia);
+  padding: 0.25rem 1.25rem 0.75rem;
+}
+
+.pasek-nav-mobilne a {
+  padding: 0.85rem 0;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--tusz);
+  border-bottom: 1px solid var(--linia);
+}
+
+.pasek-nav-mobilne a:last-child { border-bottom: 0; }
+
+@media (min-width: 681px) {
+  .pasek-nav-mobilne { display: none; }
+}
+
 .pasek-logo {
   height: 46px;
   width: auto;
@@ -233,6 +277,70 @@ p { margin: 0 0 1.15rem; }
 @media (pointer: coarse) {
   .podpowiedz-mysz { display: none; }
   .podpowiedz-dotyk { display: inline; }
+}
+
+/* ---------- wasze historie ---------- */
+
+.historie-siatka {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 56rem;
+  margin: 2.5rem auto 0;
+  padding: 0 1.25rem;
+}
+
+@media (max-width: 680px) {
+  .historie-siatka { grid-template-columns: 1fr; }
+}
+
+.historia-kafelek {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.historia-kafelek img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.historia-kafelek-nazwa {
+  display: block;
+  margin-top: 0.9rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.3rem;
+}
+
+.historia-glowa { padding: 0 1.25rem; }
+
+.historia-powrot {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--szary);
+  text-decoration: none;
+}
+
+.historia-powrot:hover { color: var(--akcent); }
+
+.historia-galeria {
+  max-width: 72rem;
+  margin: 2.5rem auto 0;
+  padding: 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.historia-podpis {
+  max-width: var(--miara);
+  margin: 0 auto;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: center;
 }
 
 /* ---------- pakiety ---------- */
