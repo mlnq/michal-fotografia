@@ -164,4 +164,21 @@ export const proces = [
 export const kontakt = {
   naglowek: "Sprawdźmy, czy mam wolny termin",
   tekst: "Napiszcie datę i miejsce wesela, odpowiem tego samego dnia. Jeśli wolicie porozmawiać, dzwońcie śmiało.",
+  formularz: {
+    pola: {
+      imieNazwisko: { etykieta: "Imię i nazwisko", placeholder: "Ania i Paweł" },
+      email: { etykieta: "E-mail", placeholder: "wy@przyklad.pl" },
+      telefon: { etykieta: "Telefon", placeholder: "+48 600 000 000" },
+      dataWesela: { etykieta: "Data wesela" },
+      sala: { etykieta: "Sala weselna", placeholder: "Nazwa sali / miejsca" },
+      wiadomosc: {
+        etykieta: "Wiadomość (opcjonalnie)",
+        placeholder: "Dodatkowe informacje, pytania...",
+      },
+    },
+    przycisk: "Wyślij zapytanie",
+    przyciskWysylanie: "Wysyłanie…",
+    sukces: "Dziękuję! Wiadomość dotarła — odpowiem najszybciej, jak mogę.",
+    blad: "Coś poszło nie tak. Spróbujcie ponownie albo napiszcie bezpośrednio na maila lub zadzwońcie.",
+  },
 };
