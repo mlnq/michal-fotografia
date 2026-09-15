@@ -397,20 +397,6 @@ p { margin: 0 0 1.15rem; }
 
 .opinia footer { color: var(--szary); font-size: 0.95rem; }
 
-/* ---------- kontakt ---------- */
-
-.kontakt-link {
-  display: block;
-  font-family: "Fraunces", Georgia, serif;
-  font-size: clamp(1.6rem, 6vw, 2.3rem);
-  text-decoration: none;
-  padding: 1.1rem 0;
-  border-top: 1px solid var(--linia);
-  word-break: break-word;
-}
-
-.kontakt-link + .kontakt-link { border-bottom: 1px solid var(--linia); }
-
 .stopka {
   padding: 3rem 1.25rem 4rem;
   color: var(--szary);
@@ -592,10 +578,4 @@ button.cta:not(.cta-mocne) {
 
 .formularz-blad {
   color: #b3261e;
-}
-
-.kontakt-zapasowy {
-  margin-top: 2.5rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--linia);
 }

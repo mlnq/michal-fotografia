@@ -11,7 +11,7 @@ export const marka = {
   email: "michal.mlenko@gmail.com",
   logo: "/foto/logo.png",
   // Zostaw pusty ciąg znaków, jeśli nie chcesz przycisku do Messengera.
-  messenger: "https://m.me/twojprofil",
+  messenger: "https://m.me/mlenqe.optics",
   rok: "2027",
 };
 
@@ -163,8 +163,7 @@ export const proces = [
 
 export const kontakt = {
   naglowek: "Sprawdźmy, czy mam wolny termin",
-  tekst: "Napiszcie datę i miejsce wesela, odpowiem tego samego dnia. Jeśli wolicie porozmawiać, dzwońcie śmiało.",
-  zapasowyTekst: "Wolisz zadzwonić albo napisać bezpośrednio?",
+  tekst: "Napiszcie datę i miejsce wesela, odpowiem tego samego dnia. Możecie też napisać na Messengerze.",
   formularz: {
     pola: {
       imieNazwisko: { etykieta: "Imię i nazwisko", placeholder: "Ania i Paweł" },
@@ -180,6 +179,6 @@ export const kontakt = {
     przycisk: "Wyślij zapytanie",
     przyciskWysylanie: "Wysyłanie…",
     sukces: "Dziękuję! Wiadomość dotarła — odpowiem najszybciej, jak mogę.",
-    blad: "Coś poszło nie tak. Spróbujcie ponownie albo napiszcie bezpośrednio na maila lub zadzwońcie.",
+    blad: "Coś poszło nie tak. Spróbujcie ponownie albo napiszcie na Messengerze.",
   },
 };

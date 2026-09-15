@@ -1,4 +1,3 @@
-import { formatujTelefon } from "../utils";
 import FormularzKontaktowy from "./FormularzKontaktowy";
 
 export default function ContactSection({ marka, kontakt }) {
@@ -10,20 +9,11 @@ export default function ContactSection({ marka, kontakt }) {
 
         <FormularzKontaktowy tresc={kontakt.formularz} />
 
-        <div className="kontakt-zapasowy">
-          <p className="wstep">{kontakt.zapasowyTekst}</p>
-          <a className="kontakt-link" href={`tel:${marka.telefon}`}>
-            {formatujTelefon(marka.telefon)}
+        {marka.messenger && (
+          <a className="cta cta-mocne" href={marka.messenger}>
+            Napisz na Messengerze
           </a>
-          <a className="kontakt-link" href={`mailto:${marka.email}`}>
-            {marka.email}
-          </a>
-          {marka.messenger && (
-            <a className="cta cta-mocne" href={marka.messenger}>
-              Napisz na Messengerze
-            </a>
-          )}
-        </div>
+        )}
       </div>
     </section>
   );
