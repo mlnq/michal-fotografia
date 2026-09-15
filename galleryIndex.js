@@ -35,3 +35,22 @@ export function buildPortfolio() {
     });
   });
 }
+
+// Buduje listę zdjęć z konkretnego, ręcznie wybranego zestawu (patrz
+// portfolioWybrane w content.js) — zachowuje podaną kolejność, niezależnie
+// od kolejności w index.json.
+export function buildWybrane(wybrane) {
+  const wymiaryCache = {};
+
+  return wybrane.map(({ folder, plik }) => {
+    if (!wymiaryCache[folder]) {
+      const wymiaryPath = path.join(KLIENCI_DIR, folder, "wymiary.json");
+      wymiaryCache[folder] = fs.existsSync(wymiaryPath)
+        ? JSON.parse(fs.readFileSync(wymiaryPath, "utf-8"))
+        : {};
+    }
+
+    const [width, height] = wymiaryCache[folder][plik] ?? DOMYSLNE_WYMIARY;
+    return { src: `/foto/klienci/${folder}/${plik}`, width, height };
+  });
+}

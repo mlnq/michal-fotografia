@@ -6,7 +6,7 @@ export default function PlywajacyKontakt() {
   const [widoczny, setWidoczny] = useState(true);
 
   useEffect(() => {
-    const karuzela = document.querySelector(".karuzela");
+    const karuzela = document.querySelector(".portfolio-pasek");
     if (!karuzela) return;
 
     const obserwator = new IntersectionObserver(

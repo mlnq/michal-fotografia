@@ -9,14 +9,9 @@ export default function HeroSection({ hero }) {
         alt="Para młoda w dniu ślubu"
         width={1800}
         height={1200}
+        quality={90}
         priority
       />
-      <div className="hero-tekst">
-        <div className="kolumna">
-          <h1 className="hero-zdanie">{hero.zdanie}</h1>
-          <p className="hero-podpis">{hero.podpis}</p>
-        </div>
-      </div>
     </section>
   );
 }

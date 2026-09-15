@@ -17,11 +17,35 @@ export const marka = {
 
 export const hero = {
   zdjecie: "/foto/hero.webp",
+  // Cytat pojawia się w ciemnym banerze niżej na stronie, nie na zdjęciu hero.
   zdanie: "„Kochać to znaczy patrzeć w tym samym kierunku.” — C.S. Lewis",
+  // To zdanie jest pierwszą linijką tekstu w sekcji "intro" zaraz pod nagłówkiem.
   podpis:
     "Świętujcie ten dzień z najważniejszymi ludźmi wokół. Dobrze się bawcie, a ja zajmę się resztą i uwiecznię te wyjątkowe chwile!",
 };
 
+// Sekcja "intro" zaraz pod hero: nadtytuł + duży nagłówek, obok Twój portret.
+export const intro = {
+  nadtytul: "Fotograf ślubny • Białystok i okolice",
+  naglowek: "Wasza historia, zatrzymana na zawsze",
+};
+
+// Nagłówek sekcji "mój styl fotograficzny".
+export const styl = {
+  naglowek: "Mój styl fotograficzny",
+};
+
+
+// Zdjęcia w kompaktowej galerii portfolio, w dokładnie tej kolejności.
+// Pliki muszą już istnieć w public/foto/klienci/<folder>/.
+export const portfolioWybrane = [
+  { folder: "kinga-mateusz", plik: "Kinga&Mateusz-0692-041A2013.webp" },
+  { folder: "kinga-mateusz", plik: "Kinga&Mateusz-0895-041A2793.webp" },
+  { folder: "aniela-mateusz", plik: "Aniela&Mateusz-0312-041A3321.webp" },
+  { folder: "aniela-mateusz", plik: "Aniela&Mateusz-0301-2U9A1483.webp" },
+  { folder: "aniela-mateusz", plik: "Aniela&Mateusz-0331-041A3458.webp" },
+  { folder: "aniela-mateusz", plik: "Aniela&Mateusz-0563-041A4366.webp" },
+];
 
 // Link do pełnej galerii z jednego wesela. Zostaw pusty adres, jeśli jeszcze go nie masz.
 export const pelnyReportaz = {

@@ -1,69 +1,87 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export default function PortfolioGallery({ portfolio, pelnyReportaz }) {
-  const karuzelaRef = useRef(null);
+  const paskiRef = useRef(null);
+  const [aktywneZdjecie, setAktywneZdjecie] = useState(0);
 
-  const przewin = (kierunek) => {
-    const el = karuzelaRef.current;
+  useEffect(() => {
+    const el = paskiRef.current;
     if (!el) return;
-    const pierwsze = el.querySelector("img");
-    const krok = pierwsze ? pierwsze.clientWidth + 8 : el.clientWidth * 0.8;
-    el.scrollBy({ left: kierunek * krok, behavior: "smooth" });
+
+    const naScroll = () => {
+      const dzieci = Array.from(el.children);
+      let najblizszy = 0;
+      let najmniejszaRoznica = Infinity;
+      dzieci.forEach((dziecko, i) => {
+        const roznica = Math.abs(dziecko.offsetLeft - el.scrollLeft);
+        if (roznica < najmniejszaRoznica) {
+          najmniejszaRoznica = roznica;
+          najblizszy = i;
+        }
+      });
+      setAktywneZdjecie(najblizszy);
+    };
+
+    naScroll();
+    el.addEventListener("scroll", naScroll, { passive: true });
+    return () => el.removeEventListener("scroll", naScroll);
+  }, [portfolio.length]);
+
+  const idzDo = (i) => {
+    const el = paskiRef.current;
+    const dziecko = el?.children[i];
+    if (!el || !dziecko) return;
+    el.scrollTo({ left: dziecko.offsetLeft, behavior: "smooth" });
   };
 
   return (
-    <section className="sekcja sekcja-zdjecia" id="portfolio">
-      <div className="karuzela-owijka">
-        <button
-          type="button"
-          className="karuzela-strzalka karuzela-strzalka-lewo"
-          aria-label="Poprzednie zdjęcia"
-          onClick={() => przewin(-1)}
-        >
-          ‹
-        </button>
-        <div
-          ref={karuzelaRef}
-          className="karuzela"
-          tabIndex={0}
-          role="group"
-          aria-label="Galeria zdjęć, przewijana w poziomie"
-        >
+    <section className="sekcja-zdjecia" id="portfolio">
+      <div
+        ref={paskiRef}
+        className="portfolio-pasek"
+        tabIndex={0}
+        role="group"
+        aria-label="Galeria zdjęć"
+      >
+        {portfolio.map((foto, i) => (
+          <Image
+            key={foto.src}
+            src={foto.src}
+            alt={`Zdjęcie ślubne ${i + 1}`}
+            width={foto.width}
+            height={foto.height}
+            sizes="300px"
+            quality={90}
+          />
+        ))}
+      </div>
+
+      {portfolio.length > 1 && (
+        <div className="pasek-kropki" role="tablist" aria-label="Zdjęcia galerii">
           {portfolio.map((foto, i) => (
-            <Image
+            <button
               key={foto.src}
-              src={foto.src}
-              alt={`Zdjęcie ślubne ${i + 1}`}
-              width={foto.width}
-              height={foto.height}
-              sizes="80vw"
-              className={foto.width > foto.height ? "poziome" : undefined}
+              type="button"
+              className={i === aktywneZdjecie ? "kropka aktywna" : "kropka"}
+              aria-label={`Zdjęcie ${i + 1}`}
+              aria-selected={i === aktywneZdjecie}
+              role="tab"
+              onClick={() => idzDo(i)}
             />
           ))}
         </div>
-        <button
-          type="button"
-          className="karuzela-strzalka karuzela-strzalka-prawo"
-          aria-label="Następne zdjęcia"
-          onClick={() => przewin(1)}
-        >
-          ›
-        </button>
-      </div>
-      <div className="kolumna pod-karuzela">
-        <p className="karuzela-podpowiedz">
-          <span className="podpowiedz-mysz">Przewiń w bok scrollem</span>
-          <span className="podpowiedz-dotyk">Przesuń palcem w bok</span>
-        </p>
-        {pelnyReportaz.url && (
+      )}
+
+      {pelnyReportaz.url && (
+        <div className="kolumna pod-pasek">
           <a className="cta" href={pelnyReportaz.url}>
             {pelnyReportaz.tekst}
           </a>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 }
